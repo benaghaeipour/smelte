@@ -43,7 +43,7 @@
 </script>
 
 {#if value}
-  <div class="fixed w-full h-full top-0 left-0 z-30">
+  <div class="fixed w-full h-full top-0 left-0 z-50">
     <Scrim {opacity} on:click={() => !persistent && (value = false)} />
     <div class="h-full w-full absolute flex items-center justify-center overflow-y-auto">
       <div

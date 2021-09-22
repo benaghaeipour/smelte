@@ -13,8 +13,8 @@
     text: true,
     flat: true,
     dark: true,
-    remove: "px-4 px-3",
-    iconClasses: (c) => c.replace("p-4", ""),
+    remove: "",
+    // iconClasses: (c) => c.replace("p-4", ""),
     disabledClasses: (c) => c
       .replace("text-white", "text-gray-200")
       .replace("bg-gray-300", "bg-transparent")
@@ -55,18 +55,15 @@
         Rows per page:
         </div>
         <Select
-          class="w-16 h-8 mb-5"
-          remove="select"
-          replace={{ "pt-6": "pt-4" }}
-          inputWrapperClasses={(c) => c.replace("mt-2", "").replace("pb-6", "")}
-          appendClasses={(c) => c.replace("pt-4", "pt-3").replace("pr-4", "pr-2")}
+          class="w-20 h-16"
+          outlined
           noUnderline
           dense
           bind:value={perPage}
           items={perPageOptions}
         />
         <Spacer />
-        <div>{offset}-{offset + perPage > total ? total : offset + perPage} of {total}</div>
+        <div>{total > 0 ? offset + 1 : offset }-{offset + perPage > total ? total : offset + perPage} of {total}</div>
         <Button
           disabled={(page - 1) < 1}
           icon="keyboard_arrow_left"
